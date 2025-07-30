@@ -3,7 +3,7 @@
   "name": "openwrt",
   "config_flow": true,
   "documentation": "https://github.com/LemonCrab666/ha_openwrt",
-  "version": "v1.0.0",
+  "version": "v1.1.0",
   "requirements": [],
   "dependencies": [],
   "codeowners": [
