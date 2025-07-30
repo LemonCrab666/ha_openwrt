@@ -222,10 +222,27 @@ class DataFetcher:
 
         cpuinfo = resdata[1]["result"][1]["cpuusage"]
         try:
-            cputemp = resdata[2]["result"][1]["cputemp"]
-        except:
+            tempinfo = resdata[2]["result"][1]["tempinfo"]
+            cpu_match = re.search(r"CPU:\s*([\d.]+)", tempinfo)
+            if cpu_match:
+                cputemp = cpu_match.group(1)
+            else:
+                cputemp = 0
+                
+            wifi_matches = re.findall(r"WiFi:\s*([\d.]+)°C\s*([\d.]*)", tempinfo)
+            if wifi_matches:
+                wifi_temp1 = wifi_matches[0][0]
+                wifi_temp2 = wifi_matches[0][1] if wifi_matches[0][1] else None
+            else:
+                wifi_temp1 = None
+                wifi_temp2 = None
+        except Exception:
             cputemp = 0
+            wifi_temp1 = None
+            wifi_temp2 = None
         self._data["openwrt_cputemp"] = cputemp
+        self._data["openwrt_wifi_temp1"] = wifi_temp1
+        self._data["openwrt_wifi_temp2"] = wifi_temp2
         
         systeminfo = resdata[0]["result"][1]
         useronlineinfo = resdata[3]["result"]
