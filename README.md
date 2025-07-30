@@ -1,4 +1,5 @@
 # ha_openwrt
 根据 [dscao](https://github.com/dscao/openwrt) 修改自用，备份
 
-<img width="362" height="840" alt="image" src="https://github.com/user-attachments/assets/de88305c-1c47-450f-90aa-68e8b7bdc128" />
+<img width="308" height="847" alt="image" src="https://github.com/user-attachments/assets/4bfd037f-4d38-4ae9-8412-b02214320c2b" />
+
