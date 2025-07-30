@@ -37,6 +37,20 @@ SENSOR_TYPES = {
         "unit_of_measurement": "°C",
         "device_class": "temperature",
     },
+    "openwrt_wifi_2g_temp": {
+        "icon": "mdi:wifi",
+        "label": "2.4G WiFi温度",
+        "name": "WiFi_2.4G_Temperature",
+        "unit_of_measurement": "°C",
+        "device_class": "temperature",
+    },
+    "openwrt_wifi_5g_temp": {
+        "icon": "mdi:wifi",
+        "label": "5G WiFi温度",
+        "name": "WiFi_5G_Temperature",
+        "unit_of_measurement": "°C",
+        "device_class": "temperature",
+    },
     "openwrt_memory": {
         "icon": "mdi:memory",
         "label": "内存占用",
@@ -72,8 +86,7 @@ SENSOR_TYPES = {
         "icon": "mdi:lan-connect",
         "label": "活动连接",
         "name": "Connect_count",
-    },
-    
+    } 
 }
 
  
