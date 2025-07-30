@@ -231,18 +231,18 @@ class DataFetcher:
                 
             wifi_matches = re.findall(r"WiFi:\s*([\d.]+)°C\s*([\d.]*)", tempinfo)
             if wifi_matches:
-                wifi_temp1 = wifi_matches[0][0]
-                wifi_temp2 = wifi_matches[0][1] if wifi_matches[0][1] else None
+                wifi_2g_temp = wifi_matches[0][0]
+                wifi_5g_temp = wifi_matches[0][1] if wifi_matches[0][1] else None
             else:
-                wifi_temp1 = None
-                wifi_temp2 = None
+                wifi_2g_temp = None
+                wifi_5g_temp = None
         except Exception:
             cputemp = 0
-            wifi_temp1 = None
-            wifi_temp2 = None
+            wifi_2g_temp = None
+            wifi_5g_temp = None
         self._data["openwrt_cputemp"] = cputemp
-        self._data["openwrt_wifi_temp1"] = wifi_temp1
-        self._data["openwrt_wifi_temp2"] = wifi_temp2
+        self._data["openwrt_wifi_2g_temp"] = wifi_2g_temp
+        self._data["openwrt_wifi_5g_temp"] = wifi_5g_temp
         
         systeminfo = resdata[0]["result"][1]
         useronlineinfo = resdata[3]["result"]
